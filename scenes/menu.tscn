@@ -1,0 +1,451 @@
+[gd_scene load_steps=18 format=3 uid="uid://douwvywj6qh8"]
+
+[ext_resource type="PackedScene" uid="uid://dir7g5jyy1raf" path="res://scenes/card.tscn" id="1_3sch4"]
+[ext_resource type="Script" path="res://scripts/menu.gd" id="1_cpxm5"]
+[ext_resource type="FontFile" uid="uid://dxebxwpa0ldde" path="res://assets/Perfect DOS VGA 437.ttf" id="2_m6pud"]
+[ext_resource type="Script" path="res://scripts/choose.gd" id="4_isf7e"]
+[ext_resource type="AudioStream" uid="uid://bk7gjs0s0hapa" path="res://assets/newSounds/newSounds/cardPlace.ogg" id="5_fx5om"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gcajn"]
+font = ExtResource("2_m6pud")
+font_size = 50
+font_color = Color(0.952941, 0.952941, 0.952941, 1)
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_xmbnt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CardCanvas/Cards/card1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(624, 568)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CardCanvas/Cards/card1:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CardCanvas/Cards/card2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1000, 568)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CardCanvas/Cards/card3:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1360, 568)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CardCanvas/Cards/card3:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CardCanvas/CardSpawnSound:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_03w7w"]
+resource_name = "cards"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CardCanvas/Cards/card1:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(992, 1256), Vector2(624, 568)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CardCanvas/Cards/card1:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.785397, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CardCanvas/Cards/card2:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.2, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1000, 1248), Vector2(1000, 568)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CardCanvas/Cards/card3:position")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.4, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(992, 1256), Vector2(1360, 568)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CardCanvas/Cards/card3:rotation")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.4, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.785397, 0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CardCanvas/CardSpawnSound:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t4est"]
+_data = {
+"RESET": SubResource("Animation_xmbnt"),
+"cards": SubResource("Animation_03w7w")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_uh3kw"]
+font = ExtResource("2_m6pud")
+font_size = 100
+font_color = Color(0.952941, 0.952941, 0.952941, 1)
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_qyqn5"]
+font = ExtResource("2_m6pud")
+font_size = 50
+
+[sub_resource type="Animation" id="Animation_6or00"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:label_settings:font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_g0xlv"]
+resource_name = "chosen"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:label_settings:font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dkip5"]
+_data = {
+"RESET": SubResource("Animation_6or00"),
+"chosen": SubResource("Animation_g0xlv")
+}
+
+[sub_resource type="Animation" id="Animation_i3r36"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_4ka26"]
+resource_name = "fade"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_start_game"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mu0t5"]
+_data = {
+"RESET": SubResource("Animation_i3r36"),
+"fade": SubResource("Animation_4ka26")
+}
+
+[node name="Menu" type="Node2D" node_paths=PackedStringArray("cards")]
+script = ExtResource("1_cpxm5")
+cards = [NodePath("CardCanvas/Cards/card1"), NodePath("CardCanvas/Cards/card2"), NodePath("CardCanvas/Cards/card3")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Play" type="Button" parent="CanvasLayer"]
+self_modulate = Color(1, 1, 1, 0.00392157)
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -360.0
+offset_right = 448.0
+offset_bottom = -240.0
+grow_vertical = 0
+
+[node name="Header" type="Label" parent="CanvasLayer/Play"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Play"
+label_settings = SubResource("LabelSettings_gcajn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Letters" type="Button" parent="CanvasLayer"]
+self_modulate = Color(1, 1, 1, 0.00392157)
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -240.0
+offset_right = 448.0
+offset_bottom = -120.0
+grow_vertical = 0
+
+[node name="Header" type="Label" parent="CanvasLayer/Letters"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Letters
+"
+label_settings = SubResource("LabelSettings_gcajn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Exit" type="Button" parent="CanvasLayer"]
+self_modulate = Color(1, 1, 1, 0.00392157)
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -120.0
+offset_right = 448.0
+grow_vertical = 0
+
+[node name="Header" type="Label" parent="CanvasLayer/Exit"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Exit"
+label_settings = SubResource("LabelSettings_gcajn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CardCanvas" type="CanvasLayer" parent="."]
+
+[node name="CardSpawnSound" type="AudioStreamPlayer2D" parent="CardCanvas"]
+stream = ExtResource("5_fx5om")
+
+[node name="CardSpawn" type="AnimationPlayer" parent="CardCanvas"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_t4est")
+}
+
+[node name="TransitionTimer" type="Timer" parent="CardCanvas"]
+
+[node name="CardsTimer" type="Timer" parent="CardCanvas"]
+wait_time = 3.0
+
+[node name="Cards" type="Node2D" parent="CardCanvas"]
+
+[node name="card1" parent="CardCanvas/Cards" node_paths=PackedStringArray("menu", "Choosen") instance=ExtResource("1_3sch4")]
+use_parent_material = false
+position = Vector2(624, 568)
+menu = NodePath("../../..")
+Choosen = NodePath("../../Choosen")
+
+[node name="card2" parent="CardCanvas/Cards" node_paths=PackedStringArray("menu", "Choosen") instance=ExtResource("1_3sch4")]
+use_parent_material = false
+position = Vector2(1000, 568)
+menu = NodePath("../../..")
+Choosen = NodePath("../../Choosen")
+
+[node name="card3" parent="CardCanvas/Cards" node_paths=PackedStringArray("menu", "Choosen") instance=ExtResource("1_3sch4")]
+use_parent_material = false
+position = Vector2(1360, 568)
+menu = NodePath("../../..")
+Choosen = NodePath("../../Choosen")
+
+[node name="Header" type="Label" parent="CardCanvas"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 152.0
+grow_horizontal = 2
+text = "Choose an effect"
+label_settings = SubResource("LabelSettings_uh3kw")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Choosen" type="Label" parent="CardCanvas"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 192.0
+offset_bottom = 344.0
+grow_horizontal = 2
+label_settings = SubResource("LabelSettings_qyqn5")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_isf7e")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CardCanvas/Choosen"]
+libraries = {
+"": SubResource("AnimationLibrary_dkip5")
+}
+
+[node name="Continue" type="Button" parent="CardCanvas"]
+unique_name_in_owner = true
+self_modulate = Color(1, 1, 1, 0.00392157)
+offset_left = 1152.0
+offset_top = 944.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="Header" type="Label" parent="CardCanvas/Continue"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -768.0
+offset_top = -144.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Continue without effect >"
+label_settings = SubResource("LabelSettings_gcajn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Module" type="CanvasLayer" parent="."]
+
+[node name="TransitionColor" type="ColorRect" parent="Module"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="Fade" type="AnimationPlayer" parent="Module/TransitionColor"]
+libraries = {
+"": SubResource("AnimationLibrary_mu0t5")
+}
+
+[connection signal="pressed" from="CanvasLayer/Play" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="CanvasLayer/Letters" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="CanvasLayer/Exit" to="." method="_on_continue_pressed"]
+[connection signal="timeout" from="CardCanvas/TransitionTimer" to="." method="_on_transition_timer_timeout"]
+[connection signal="timeout" from="CardCanvas/CardsTimer" to="." method="_on_cards_timer_timeout"]
+[connection signal="pressed" from="CardCanvas/Continue" to="." method="_on_continue_pressed"]

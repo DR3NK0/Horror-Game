@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cetlq30ccmct3"
+path="res://.godot/imported/excited horror sound.wav-98b3c03c3aad8e3f7e85893bf9e102fb.sample"
+
+[deps]
+
+source_file="res://assets/sounds/excited horror sound.wav"
+dest_files=["res://.godot/imported/excited horror sound.wav-98b3c03c3aad8e3f7e85893bf9e102fb.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,46 @@
+[gd_scene load_steps=9 format=3 uid="uid://dir7g5jyy1raf"]
+
+[ext_resource type="Shader" path="res://shader/disolve.gdshader" id="1_ejhrn"]
+[ext_resource type="Texture2D" uid="uid://0511jlu41vtu" path="res://assets/cards.png" id="2_dh2me"]
+[ext_resource type="Script" path="res://scripts/card.gd" id="2_dyoou"]
+[ext_resource type="AudioStream" uid="uid://c7sqor8cil1ex" path="res://assets/newSounds/newSounds/cardFlip.ogg" id="4_onlyf"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_eeb55"]
+frequency = 0.0094
+offset = Vector3(220, -79.21, 2.08167e-14)
+fractal_lacunarity = 4.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ic1sj"]
+width = 152
+height = 207
+noise = SubResource("FastNoiseLite_eeb55")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sndfu"]
+shader = ExtResource("1_ejhrn")
+shader_parameter/dissolve_value = 1.0
+shader_parameter/burn_size = 0.02
+shader_parameter/burn_color = Color(1, 0.847059, 0, 1)
+shader_parameter/dissolve_texture = SubResource("NoiseTexture2D_ic1sj")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h65qc"]
+size = Vector2(27.4286, 38.5714)
+
+[node name="card" type="Sprite2D"]
+material = SubResource("ShaderMaterial_sndfu")
+use_parent_material = true
+scale = Vector2(7, 7)
+texture = ExtResource("2_dh2me")
+hframes = 11
+script = ExtResource("2_dyoou")
+
+[node name="mouseDetection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mouseDetection"]
+position = Vector2(-1.00902e-06, 1.75408e-06)
+shape = SubResource("RectangleShape2D_h65qc")
+
+[node name="CardReveal" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_onlyf")
+
+[connection signal="mouse_entered" from="mouseDetection" to="." method="_on_mouse_detection_mouse_entered"]
+[connection signal="mouse_exited" from="mouseDetection" to="." method="_on_mouse_detection_mouse_exited"]

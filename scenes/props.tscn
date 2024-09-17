@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://c1jfvk6avy3x"]
+
+[ext_resource type="Script" path="res://scripts/props.gd" id="1_b7n5m"]
+[ext_resource type="Texture2D" uid="uid://q3danfwyg6cw" path="res://assets/blood.png" id="1_mewr6"]
+[ext_resource type="AudioStream" uid="uid://bh4cpd6ujwli7" path="res://assets/sounds/creepy.wav" id="2_hhcky"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_62rwr"]
+radius = 1121.62
+
+[node name="Props" type="Node2D"]
+script = ExtResource("1_b7n5m")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.033, 0.033)
+texture = ExtResource("1_mewr6")
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(0.033, 0.033)
+collision_layer = 2
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_62rwr")
+
+[node name="SFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_hhcky")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

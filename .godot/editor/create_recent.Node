@@ -1,0 +1,15 @@
+SubViewport
+PointLight2D
+CollisionShape2D
+Area2D
+Sprite2D
+Node2D
+TileMap
+WorldEnvironment
+CPUParticles2D
+GPUParticles2D
+AudioStreamPlayer2D
+Timer
+AnimationPlayer
+Label
+TextureProgressBar
